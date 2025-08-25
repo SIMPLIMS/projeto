@@ -1,0 +1,25 @@
+# Ambiente virtual
+venv/
+.env
+.venv/
+
+# Configurações do PyCharm
+.idea/
+
+# Arquivos compilados do Python
+__pycache__/
+*.pyc
+
+# Banco de dados SQLite (caso use no desenvolvimento)
+db.sqlite3
+
+# Arquivos de migração que não precisam ser versionados (opcional, se quiser controlar manualmente)
+# */migrations/*.py
+# */migrations/__pycache__/
+
+# Arquivos estáticos coletados
+/staticfiles/
+
+# Logs
+*.log
+
