@@ -8,7 +8,7 @@ class MatrizViewMixin:
     """
     model = Matriz
     form_class = MatrizForm
-    success_url = reverse_lazy("lista_matrizes")
+    success_url = reverse_lazy("matriz_listar")
 
 
 class DeleteRecordMixin:

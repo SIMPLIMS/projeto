@@ -4,7 +4,7 @@
 
 <h1>Lista de Matrizes</h1>
 
-<a href="{% url 'criar_matriz' %}" class="btn btn-primary">Nova Matriz</a>
+<a href="{% url 'matriz_criar' %}" class="btn btn-primary">Nova Matriz</a>
 
 <table class="table table-striped mt-3">
     <thead>
@@ -18,8 +18,8 @@
             <tr>
                 <td>{{ matriz.descricao }}</td>
                 <td>
-                    <a href="{% url 'editar_matriz' matriz.pk %}" class="btn btn-sm btn-warning">Editar</a>
-                    <a href="{% url 'excluir_matriz' matriz.pk %}" class="btn btn-sm btn-danger">Excluir</a>
+                    <a href="{% url 'matriz_editar' matriz.pk %}" class="btn btn-sm btn-warning">Editar</a>
+                    <a href="{% url 'matriz_excluir' matriz.pk %}" class="btn btn-sm btn-danger">Excluir</a>
                 </td>
             </tr>
         {% empty %}
