@@ -9,6 +9,7 @@
 <table class="table table-striped mt-3">
     <thead>
         <tr>
+            <th>Id</th>
             <th>Descrição</th>
             <th>Ações</th>
         </tr>
@@ -16,6 +17,7 @@
     <tbody>
         {% for item in object_list %}
             <tr>
+                 <td>{{ item.pk }}</td>
                 <td>{{ item.descricao }}</td>
                 <td>
                     <a href="{% url 'matriz_editar' item.pk %}" class="btn btn-sm btn-warning">Editar</a>

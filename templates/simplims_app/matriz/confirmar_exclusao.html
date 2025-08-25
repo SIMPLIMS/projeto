@@ -1,10 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "base.html" %}
+{% block content %}
 
-</body>
-</html>
+<h1>Excluir Matriz</h1>
+<p>Tem certeza que deseja excluir a matriz "<strong>{{ object.descricao }}</strong>"?</p>
+
+<form method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">Sim, excluir</button>
+    <a href="{% url 'matriz_listar' %}" class="btn btn-secondary">Cancelar</a>
+</form>
+
+{% endblock %}

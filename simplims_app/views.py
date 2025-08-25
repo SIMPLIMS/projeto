@@ -5,6 +5,7 @@ from datetime import datetime, timedelta
 from .models import Matriz
 from .mixins import MatrizViewMixin, DeleteRecordMixin
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView
+from django.urls import reverse_lazy
 
 
 locale.setlocale(locale.LC_TIME, 'pt_BR.UTF-8')
@@ -50,3 +51,4 @@ class MatrizUpdateView(MatrizViewMixin, UpdateView):
 
 class MatrizDeleteView(MatrizViewMixin, DeleteRecordMixin, DeleteView):
     template_name = "simplims_app/matriz/confirmar_exclusao.html"
+    success_url = reverse_lazy('matriz_listar')

@@ -1,6 +1,7 @@
 from django.urls import reverse_lazy
 from .models import Matriz
 from .forms import MatrizForm
+from django.urls import reverse_lazy
 
 class MatrizViewMixin:
     """
@@ -18,4 +19,5 @@ class DeleteRecordMixin:
     def delete(self, request, *args, **kwargs):
         # Aqui você pode adicionar lógica comum, como log ou mensagens
         print(f"Registro será deletado: {self.object}")
+        success_message = "Registro excluído com sucesso."
         return super().delete(request, *args, **kwargs)
