@@ -2,6 +2,8 @@ from django.shortcuts import render
 import calendar, locale
 from calendar import HTMLCalendar
 from datetime import datetime, timedelta
+from .models import Matriz
+from .mixins import MatrizViewMixin, DeleteRecordMixin
 
 locale.setlocale(locale.LC_TIME, 'pt_BR.UTF-8')
 
@@ -33,3 +35,16 @@ def home(request, ano=datetime.now().year, mes=datetime.now().strftime('%B')):
         "ano_corrente": ano_corrente,
         "horario": horario,
         })
+
+class MatrizListView(MatrizViewMixin, ListView):
+    template_name = "simplims_app/matriz/lista.html"
+    context_object_name = "matrizes"
+
+class MatrizCreateView(MatrizViewMixin, CreateView):
+    template_name = "simplims_app/matriz/formulario.html"
+
+class MatrizUpdateView(MatrizViewMixin, UpdateView):
+    template_name = "simplims_app/matriz/formulario.html"
+
+class MatrizDeleteView(MatrizViewMixin, DeleteRecordMixin, DeleteView):
+    template_name = "simplims_app/matriz/confirmar_exclusao.html"
