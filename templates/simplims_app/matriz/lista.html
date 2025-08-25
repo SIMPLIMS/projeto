@@ -14,12 +14,12 @@
         </tr>
     </thead>
     <tbody>
-        {% for matriz in matrizes %}
+        {% for item in object_list %}
             <tr>
-                <td>{{ matriz.descricao }}</td>
+                <td>{{ item.descricao }}</td>
                 <td>
-                    <a href="{% url 'matriz_editar' matriz.pk %}" class="btn btn-sm btn-warning">Editar</a>
-                    <a href="{% url 'matriz_excluir' matriz.pk %}" class="btn btn-sm btn-danger">Excluir</a>
+                    <a href="{% url 'matriz_editar' item.pk %}" class="btn btn-sm btn-warning">Editar</a>
+                    <a href="{% url 'matriz_excluir' item.pk %}" class="btn btn-sm btn-danger">Excluir</a>
                 </td>
             </tr>
         {% empty %}

@@ -40,7 +40,7 @@ def home(request, ano=datetime.now().year, mes=datetime.now().strftime('%B')):
 
 class MatrizListView(MatrizViewMixin, ListView):
     template_name = "simplims_app/matriz/lista.html"
-    context_object_name = "matriz"
+#    context_object_name = "matriz"
 
 class MatrizCreateView(MatrizViewMixin, CreateView):
     template_name = "simplims_app/matriz/formulario.html"
