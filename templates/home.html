@@ -5,7 +5,8 @@
 {% block content %}
 <center>
     <h1>Oi, {{ nome }}!</h1>
-    <h2> Coletas em Campo para {{mes}} de {{ano}} às {{horario}}</h2>
-
+    <p>
+        Coletas em Campo para {{data_calendario |date:"F"}} de {{data_calendario|date:"Y"}} às {{data_corrente|time}}
+    </p>
 </center>
 {% endblock %}
