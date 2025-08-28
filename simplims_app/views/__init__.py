@@ -12,6 +12,13 @@ from .matriz import (
     MatrizUpdateView,
 )
 
+from .empresa import (
+    EmpresaCreateView,
+    EmpresaDeleteView,
+    EmpresaListView,
+    EmpresaUpdateView,
+)
+
 locale.setlocale(locale.LC_TIME, "pt_BR.UTF-8")
 
 

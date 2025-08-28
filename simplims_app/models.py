@@ -20,9 +20,9 @@ class Empresa(models.Model):
         ("FORNECEDOR","Fornecedor" ),
     ]
 
-    apelido = models.Charfield(
+    apelido = models.CharField(
         help_text="Apelido ou abreviação",
-        max_lenght=200,
+        max_length=200,
         verbose_name="Apelido"
     )
 
@@ -34,26 +34,26 @@ class Empresa(models.Model):
 
     endereco = models.CharField(
         help_text="Endereço completo",
-        max_lenght=200,
+        max_length=200,
         verbose_name="Endereço"
     )
 
     telefone = models.CharField(
         help_text="Telefone para contato",
-        max_lenght=15,
+        max_length=15,
         verbose_name="Telefone/Fax",
     )
 
     cnpj = models.CharField(
         help_text="CNPJ",
-        max_lenght=20,
-        vero
+        max_length=20,
+        verbose_name="CNPJ",
     )
 
     tipo_empresa= models.CharField(
         max_length= 20,
         choices = TIPOS,
-        VERBOSE_NAME="Tipo de Empresa",
+        verbose_name="Tipo de Empresa",
     )
 
     email = models.EmailField(
@@ -63,8 +63,8 @@ class Empresa(models.Model):
         verbose_name="E-mail",
     )
 
-    responsavel_tecnico= models.CharFiel(
-        max_lenght=80,
+    responsavel_tecnico= models.CharField(
+        max_length=80,
         blank=True,
         null=True,
         help_text="Responsável técnico (apenas para clientes)",
@@ -72,4 +72,4 @@ class Empresa(models.Model):
     )
 
     def __str__(self):
-        return f"{self.razao_social} ({self.apelido})"
+        return self.apelido

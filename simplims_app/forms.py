@@ -1,6 +1,6 @@
 from django import forms
 
-from .models import Matriz
+from .models import Matriz, Empresa
 
 class MatrizForm(forms.ModelForm):
 
@@ -8,4 +8,12 @@ class MatrizForm(forms.ModelForm):
         model = Matriz
         fields = [
             'descricao',
+        ]
+
+class EmpresaForm(forms.ModelForm):
+
+    class Meta:
+        model = Empresa
+        fields = [
+            'apelido',
         ]

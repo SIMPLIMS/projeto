@@ -1,0 +1,35 @@
+<!-- templates/simplims_app/empresa/lista.html -->
+{% extends "base.html" %}
+{% block content %}
+
+<h1>Lista de Empresas</h1>
+
+<a href="{% url 'empresa_criar' %}" class="btn btn-primary">Nova Empresa</a>
+
+<table class="table table-striped mt-3">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Apelido</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in object_list %}
+            <tr>
+                 <td>{{ item.pk }}</td>
+                <td>{{ item.apelido }}</td>
+                <td>
+                    <a href="{% url 'empresa_editar' item.pk %}" class="btn btn-sm btn-warning">Editar</a>
+                    <a href="{% url 'empresa_excluir' item.pk %}" class="btn btn-sm btn-danger">Excluir</a>
+                </td>
+            </tr>
+        {% empty %}
+            <tr>
+                <td colspan="2">Nenhuma empresa cadastrada.</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}
