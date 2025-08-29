@@ -78,6 +78,12 @@ class Empresa(models.Model):
 class Parametro(models.Model):
     descricao = models.CharField(max_length=100, unique = True)
 
+    unidade_medida = models.CharField(
+        help_text="Unidade de medida",
+        max_length=10,
+        verbose_name="Unidade",
+    )
+
     def __str__(self):
         return self.descricao
 
