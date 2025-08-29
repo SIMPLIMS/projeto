@@ -73,3 +73,13 @@ class Empresa(models.Model):
 
     def __str__(self):
         return self.apelido
+
+
+class Parametro(models.Model):
+    descricao = models.CharField(max_length=100, unique = True)
+
+    def __str__(self):
+        return self.descricao
+
+    class Meta:
+        verbose_name = "Parametro"
