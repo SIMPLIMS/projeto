@@ -19,6 +19,13 @@ from .empresa import (
     EmpresaUpdateView,
 )
 
+from .parametro import (
+    ParametroCreateView,
+    ParametroDeleteView,
+    ParametroListView,
+    ParametroUpdateView,
+)
+
 locale.setlocale(locale.LC_TIME, "pt_BR.UTF-8")
 
 
