@@ -17,3 +17,11 @@ class EmpresaForm(forms.ModelForm):
         fields = [
             'apelido',
         ]
+
+class ParametroForm(forms.ModelForm):
+
+    class Meta:
+        model = Parametro
+        fields = [
+            'descricao',
+        ]
