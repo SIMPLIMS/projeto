@@ -24,4 +24,5 @@ class ParametroForm(forms.ModelForm):
         model = Parametro
         fields = [
             'descricao',
+            'unidade_medida'
         ]
