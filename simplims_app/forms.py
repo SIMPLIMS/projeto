@@ -26,3 +26,22 @@ class ParametroForm(forms.ModelForm):
             'descricao',
             'unidade_medida'
         ]
+
+class ServicoForm(forms.ModelForm):
+
+    class Meta:
+        model = Servico
+        fields = [
+            'descricao',
+            'matriz'
+        ]
+
+        widgets = {
+            'descricao': forms.Textarea(attrs={'rows': 3, 'placeholder': 'Descreva o serviço'}),
+            'matriz': forms.Select(attrs={'class': 'form-select'}),
+        }
+        labels = {
+            'descricao': 'Descrição do Serviço',
+            'matriz': 'Matriz',
+        }
+
