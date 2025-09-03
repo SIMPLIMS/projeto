@@ -20,4 +20,10 @@ urlpatterns = [
     path('parametro/novo/', views.ParametroCreateView.as_view(), name='parametro_criar'),
     path('parametro/<int:pk>/editar/', views.ParametroUpdateView.as_view(), name='parametro_editar'),
     path('parametro/<int:pk>/excluir/', views.ParametroDeleteView.as_view(), name='parametro_excluir'),
+
+    # URLs de Servicos
+    path('servico/', views.ServicoListView.as_view(), name='servico_listar'),
+    path('servico/novo/', views.ServicoCreateView.as_view(), name='servico_criar'),
+    path('servico/<int:pk>/editar/', views.ServicoUpdateView.as_view(), name='servico_editar'),
+    path('servico/<int:pk>/excluir/', views.ServicoDeleteView.as_view(), name='servico_excluir'),
 ]
