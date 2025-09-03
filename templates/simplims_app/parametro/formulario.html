@@ -2,7 +2,7 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h1>{% if form.instance.pk %}Editar{% else %}Nova{% endif %} Parâmetro</h1>
+<h1>{% if form.instance.pk %}Editar{% else %}Novo{% endif %} Parâmetro</h1>
 
 <form method="post" class="mt-3">
     {% csrf_token %}

@@ -1,6 +1,6 @@
 from django import forms
 
-from .models import Matriz, Empresa, Parametro
+from .models import Matriz, Empresa, Parametro, Servico
 
 class MatrizForm(forms.ModelForm):
 

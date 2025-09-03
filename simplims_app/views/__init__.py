@@ -26,6 +26,13 @@ from .parametro import (
     ParametroUpdateView,
 )
 
+from .servico import (
+    ServicoCreateView,
+    ServicoDeleteView,
+    ServicoListView,
+    ServicoUpdateView,
+)
+
 locale.setlocale(locale.LC_TIME, "pt_BR.UTF-8")
 
 
