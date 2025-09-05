@@ -37,7 +37,7 @@ class ServicoForm(forms.ModelForm):
         ]
 
         widgets = {
-            'descricao': forms.Textarea(attrs={'rows': 3, 'placeholder': 'Descreva o serviço'}),
+            'descricao': forms.Textarea(attrs={'rows': 1, 'placeholder': 'Descreva o serviço'}),
             'matriz': forms.Select(attrs={'class': 'form-select'}),
         }
         labels = {
