@@ -26,4 +26,11 @@ urlpatterns = [
     path('servico/novo/', views.ServicoCreateView.as_view(), name='servico_criar'),
     path('servico/<int:pk>/editar/', views.ServicoUpdateView.as_view(), name='servico_editar'),
     path('servico/<int:pk>/excluir/', views.ServicoDeleteView.as_view(), name='servico_excluir'),
+
+    # URLs de Ordem de Servicos
+    path('ordem_servico/', views.OrdemServicoListView.as_view(), name='ordem_servico_listar'),
+    path('ordem_servico/novo/', views.OrdemServicoCreateView.as_view(), name='ordem_servico_criar'),
+    path('ordem_servico/<int:pk>/editar/', views.OrdemServicoUpdateView.as_view(), name='ordem_servico_editar'),
+    path('ordem_servico/<int:pk>/excluir/', views.OrdemServicoDeleteView.as_view(), name='ordem_servico_excluir'),
+
 ]
