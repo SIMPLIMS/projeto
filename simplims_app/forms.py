@@ -1,6 +1,6 @@
 from django import forms
 
-from .models import Matriz, Empresa, Parametro, Servico
+from .models import Matriz, Empresa, Parametro, Servico, OrdemServico
 
 class MatrizForm(forms.ModelForm):
 
@@ -45,3 +45,22 @@ class ServicoForm(forms.ModelForm):
             'matriz': 'Matriz',
         }
 
+
+class OrdemServicoForm(forms.ModelForm):
+
+    class Meta:
+        model = OrdemServico
+        fields = [
+            'empresa',
+            'matriz',
+            'quantidade_amostras',
+            'observacoes',
+        ]
+
+        widgets = {
+            "empresa": forms.Select(attrs={"class": "form-control"}),
+            "servico": forms.Select(attrs={"class": "form-control"}),
+            "matriz": forms.Select(attrs={"class": "form-control"}),
+            "quantidade_amostras": forms.NumberInput(attrs={"class": "form-control", "min": 1}),
+            "observacoes": forms.Textarea(attrs={"class": "form-control", "rows": 3}),
+        }

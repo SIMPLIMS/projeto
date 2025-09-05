@@ -34,10 +34,10 @@ from .servico import (
 )
 
 from .ordem_servico import (
-    ServicoCreateView,
-    ServicoDeleteView,
-    ServicoListView,
-    ServicoUpdateView,
+    OrdemServicoCreateView,
+    OrdemServicoDeleteView,
+    OrdemServicoListView,
+    OrdemServicoUpdateView,
 )
 locale.setlocale(locale.LC_TIME, "pt_BR.UTF-8")
 
