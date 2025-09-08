@@ -117,8 +117,79 @@ class OrdemServico(models.Model):
     )
 
     def __str__(self):
-        return self.descricao
+        return f"OS {self.numero} - {self.empresa.nome}"
 
     class Meta:
         verbose_name = "Ordem de Serviço"
         verbose_name_plural = "Ordens de Serviço"
+
+
+class Amostra(models.Model):
+    ordem_servico - models.ForeignKey(
+        "OrdemServico",
+        on_delete-models.CASCADE,
+        related_name="amostras",
+        verbose_name="Ordem de Serviço"
+    )
+
+    servico = models.ForeignKey(
+        "Servico",
+        on_delete=models.CASCADE,
+        verbose_name="Serviço Contratado"
+    )
+
+    volume = models.DecimalField(
+        max_digits=10,
+        decimal_places=2,
+        verbose_name="Volume",
+        null=True,
+        blank=True
+    )
+
+    horario_coleta = models.TimeField(verbose_name="Horário da Coleta")
+    local_coleta = models.CharField(max_length=200, verbose_name="Local da Coleta")
+
+    ph = models.DecimalField(max_digits=5, decimal_places=2, verbose_name="pH", null=True, blank=True)
+    temperatura = models.DecimalField(max_digits=5, decimal_places=2, verbose_name="Temperatura (°C)", null=True, blank=True)
+    solidos_sedimentaveis = models.DecimalField(max_digits=7, decimal_places=3, verbose_name="Sólidos Sedimentáveis (mL/L)", null=True, blank=True)
+    materiais_flutuantes = models.BooleanField(default=False, verbose_name="Materiais Flutuantes")
+
+    data_registro = models.DateTimeField(auto_now_add=True, verbose_name="Data de Registro")
+
+    def __str__(self):
+        return f"Amostra {self.id} - OS {self.ordem_servico.id} ({self.servico.descricao})"
+
+
+class ResultadoAmostraParametro(models.Model):
+    amostra = models.ForeignKey(
+        Amostra,
+        on_delete=models.CASCADE,
+        related_name="resultados",
+        verbose_name="Amostra"
+    )
+    parametro = models.ForeignKey(
+        "Parametro",
+        on_delete=models.CASCADE,
+        verbose_name="Parâmetro"
+    )
+    resultado = models.CharField(
+        max_length=100,
+        null=True,
+        blank=True,
+        verbose_name="Resultado"
+    )
+    unidade = models.CharField(
+        max_length=20,
+        null=True,
+        blank=True,
+        verbose_name="Unidade"
+    )
+    data_analise = models.DateField(null=True, blank=True, verbose_name="Data da Análise")
+
+    class Meta:
+        verbose_name = "Resultado de Parâmetro da Amostra"
+        verbose_name_plural = "Resultados de Parâmetros das Amostras"
+        unique_together = ("amostra", "parametro")  # evita duplicidade
+
+    def __str__(self):
+        return f"{self.parametro.nome} - Amostra {self.amostra.id}: {self.resultado or 'pendente'}"
