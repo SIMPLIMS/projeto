@@ -125,9 +125,9 @@ class OrdemServico(models.Model):
 
 
 class Amostra(models.Model):
-    ordem_servico - models.ForeignKey(
+    ordem_servico = models.ForeignKey(
         "OrdemServico",
-        on_delete-models.CASCADE,
+        on_delete=models.CASCADE,
         related_name="amostras",
         verbose_name="Ordem de Serviço"
     )
@@ -157,7 +157,7 @@ class Amostra(models.Model):
     data_registro = models.DateTimeField(auto_now_add=True, verbose_name="Data de Registro")
 
     def __str__(self):
-        return f"Amostra {self.id} - OS {self.ordem_servico.id} ({self.servico.descricao})"
+        return f"Amostra {self.id}"
 
 
 class ResultadoAmostraParametro(models.Model):
