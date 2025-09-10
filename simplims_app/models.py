@@ -192,4 +192,14 @@ class ResultadoAmostraParametro(models.Model):
         unique_together = ("amostra", "parametro")  # evita duplicidade
 
     def __str__(self):
-        return f"{self.parametro.nome} - Amostra {self.amostra.id}: {self.resultado or 'pendente'}"
+        return f"{self.parametro.descricao} - Amostra {self.amostra.id}: {self.resultado or 'pendente'}"
+
+class Legislacao(models.Model):
+    parametro = models.ForeignKey("Parametro", on_delete=models.CASCADE)
+    valor_minimo = models.FloatField(null=True, blank=True)
+    valor_maximo = models.FloatField(null=True, blank=True)
+    observacao = models.TextField(blank=True, null=True)
+
+    def __str__(self):
+        return f"{self.parametro.descricao}"
+
