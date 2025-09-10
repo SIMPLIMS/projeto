@@ -1,6 +1,7 @@
 """
 Tudo o que é relativo às views de Servico ficam aqui
 """
+
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, DeleteView, ListView, UpdateView
 

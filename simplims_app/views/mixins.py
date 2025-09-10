@@ -1,6 +1,8 @@
 """
 Mixins genéricos para usar com as views
 """
+
+
 class DeleteRecordMixin:
     """
     Mixin para adicionar lógica extra em DeleteView (mensagens, logs, etc.)

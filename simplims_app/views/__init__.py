@@ -39,6 +39,7 @@ from .ordem_servico import (
     OrdemServicoListView,
     OrdemServicoUpdateView,
 )
+
 locale.setlocale(locale.LC_TIME, "pt_BR.UTF-8")
 
 
