@@ -5,47 +5,18 @@ from datetime import datetime, timedelta
 
 from django.shortcuts import render
 
-from .matriz import (
-    MatrizCreateView,
-    MatrizDeleteView,
-    MatrizListView,
-    MatrizUpdateView,
-)
-
-from .empresa import (
-    EmpresaCreateView,
-    EmpresaDeleteView,
-    EmpresaListView,
-    EmpresaUpdateView,
-)
-
-from .parametro import (
-    ParametroCreateView,
-    ParametroDeleteView,
-    ParametroListView,
-    ParametroUpdateView,
-)
-
-from .servico import (
-    ServicoCreateView,
-    ServicoDeleteView,
-    ServicoListView,
-    ServicoUpdateView,
-)
-
-from .ordem_servico import (
-    OrdemServicoCreateView,
-    OrdemServicoDeleteView,
-    OrdemServicoListView,
-    OrdemServicoUpdateView,
-)
-
-from .legislacao import (
-    LegislacaoCreateView,
-    LegislacaoDeleteView,
-    LegislacaoListView,
-    LegislacaoUpdateView,
-)
+from .empresa import (EmpresaCreateView, EmpresaDeleteView, EmpresaListView,
+                      EmpresaUpdateView)
+from .legislacao import (LegislacaoCreateView, LegislacaoDeleteView,
+                         LegislacaoListView, LegislacaoUpdateView)
+from .matriz import (MatrizCreateView, MatrizDeleteView, MatrizListView,
+                     MatrizUpdateView)
+from .ordem_servico import (OrdemServicoCreateView, OrdemServicoDeleteView,
+                            OrdemServicoListView, OrdemServicoUpdateView)
+from .parametro import (ParametroCreateView, ParametroDeleteView,
+                        ParametroListView, ParametroUpdateView)
+from .servico import (ServicoCreateView, ServicoDeleteView, ServicoListView,
+                      ServicoUpdateView)
 
 locale.setlocale(locale.LC_TIME, "pt_BR.UTF-8")
 

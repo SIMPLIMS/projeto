@@ -1,14 +1,7 @@
 from django.contrib import admin
-from .models import (
-    Matriz,
-    Empresa,
-    Parametro,
-    Servico,
-    OrdemServico,
-    Amostra,
-    ResultadoAmostraParametro,
-    Legislacao,
-)
+
+from .models import (Amostra, Empresa, Legislacao, Matriz, OrdemServico,
+                     Parametro, ResultadoAmostraParametro, Servico)
 
 # Register your models here.
 admin.site.register(Matriz)
