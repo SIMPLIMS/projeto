@@ -79,4 +79,26 @@ urlpatterns = [
         views.OrdemServicoDeleteView.as_view(),
         name="ordem_servico_excluir",
     ),
+
+    # URLs de Legislação
+    path(
+        "legislacao/",
+        views.LegislacaoListView.as_view(),
+        name="legislacao_listar",
+    ),
+    path(
+        "legislacao/novo/",
+        views.LegislacaoCreateView.as_view(),
+        name="legislacao_criar",
+    ),
+    path(
+        "legislacao/<int:pk>/editar/",
+        views.LegislacaoUpdateView.as_view(),
+        name="legislacao_editar",
+    ),
+    path(
+        "legislacao/<int:pk>/excluir/",
+        views.LegislacaoDeleteView.as_view(),
+        name="legislacao_excluir",
+    ),
 ]
