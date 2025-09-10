@@ -40,6 +40,13 @@ from .ordem_servico import (
     OrdemServicoUpdateView,
 )
 
+from .legislacao import (
+    LegislacaoCreateView,
+    LegislacaoDeleteView,
+    LegislacaoListView,
+    LegislacaoUpdateView,
+)
+
 locale.setlocale(locale.LC_TIME, "pt_BR.UTF-8")
 
 
