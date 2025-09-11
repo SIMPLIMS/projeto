@@ -46,7 +46,7 @@ class ParametroForm(forms.ModelForm):
 
     class Meta:
         model = Parametro
-        fields = ["descricao", "unidade_medida"]
+        fields = ["descricao", "unidade_medida", "categoria_parametro", "tipo_parametro"]
 
 
 class ServicoForm(forms.ModelForm):

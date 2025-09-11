@@ -92,6 +92,20 @@ class Parametro(models.Model):
         verbose_name="Unidade",
     )
 
+    tipo_parametro = models.ForeignKey(
+        "TipoParametro",
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+     )
+
+    categoria_parametro = models.ForeignKey(
+        "CategoriaParametro",
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+     )
+
     def __str__(self):
         return self.descricao
 
