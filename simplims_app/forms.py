@@ -1,6 +1,6 @@
 from django import forms
 
-from .models import Empresa, Matriz, OrdemServico, Parametro, Servico, Legislacao
+from .models import Empresa, Matriz, OrdemServico, TipoParametro, Parametro, Servico, Legislacao
 
 
 class MatrizForm(forms.ModelForm):
@@ -20,6 +20,12 @@ class EmpresaForm(forms.ModelForm):
             "apelido",
         ]
 
+class TipoParametroForm(forms.ModelForm):
+    class Meta:
+        model = TipoParametro
+        fields = [
+            "descricao",
+        ]
 
 class ParametroForm(forms.ModelForm):
 

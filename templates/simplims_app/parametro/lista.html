@@ -2,9 +2,9 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h1>Lista de Parametros</h1>
+<h1>Lista de Parâmetros</h1>
 
-<a href="{% url 'parametro_criar' %}" class="btn btn-primary">Novo Parametro</a>
+<a href="{% url 'parametro_criar' %}" class="btn btn-primary">Novo Parâmetro</a>
 
 <table class="table table-striped mt-3">
     <thead>
@@ -28,7 +28,7 @@
             </tr>
         {% empty %}
             <tr>
-                <td colspan="2">Nenhum parametro cadastrado.</td>
+                <td colspan="2">Nenhum parâmetro cadastrado.</td>
             </tr>
         {% endfor %}
     </tbody>

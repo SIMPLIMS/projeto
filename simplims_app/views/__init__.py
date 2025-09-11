@@ -13,6 +13,8 @@ from .matriz import (MatrizCreateView, MatrizDeleteView, MatrizListView,
                      MatrizUpdateView)
 from .ordem_servico import (OrdemServicoCreateView, OrdemServicoDeleteView,
                             OrdemServicoListView, OrdemServicoUpdateView)
+from .tipo_parametro import (TipoParametroCreateView, TipoParametroDeleteView,
+                        TipoParametroListView, TipoParametroUpdateView)
 from .parametro import (ParametroCreateView, ParametroDeleteView,
                         ParametroListView, ParametroUpdateView)
 from .servico import (ServicoCreateView, ServicoDeleteView, ServicoListView,
