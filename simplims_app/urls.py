@@ -45,6 +45,23 @@ urlpatterns = [
         views.TipoParametroDeleteView.as_view(),
         name="tipo_parametro_excluir",
     ),
+
+    # URLs de CategoriaParametro
+    path("categoria_parametro/", views.CategoriaParametroListView.as_view(), name="categoria_parametro_listar"),
+    path(
+        "categoria_parametro/novo/", views.CategoriaParametroCreateView.as_view(), name="categoria_parametro_criar"
+    ),
+    path(
+        "categoria_parametro/<int:pk>/editar/",
+        views.CategoriaParametroUpdateView.as_view(),
+        name="categoria_parametro_editar",
+    ),
+    path(
+        "categoria_parametro/<int:pk>/excluir/",
+        views.CategoriaParametroDeleteView.as_view(),
+        name="categoria_parametro_excluir",
+    ),
+
     # URLs de Parametros
     path("parametro/", views.ParametroListView.as_view(), name="parametro_listar"),
     path(

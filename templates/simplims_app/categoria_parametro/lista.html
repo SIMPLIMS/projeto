@@ -1,10 +1,10 @@
-<!-- templates/simplims_app/tipo_parametro/lista.html -->
+<!-- templates/simplims_app/categoria_parametro/lista.html -->
 {% extends "base.html" %}
 {% block content %}
 
-<h1>Tipos de Parâmetros</h1>
+<h1>Categorias de Parâmetros</h1>
 
-<a href="{% url 'tipo_parametro_criar' %}" class="btn btn-primary">Novo Tipo de Parametro</a>
+<a href="{% url 'categoria_parametro_criar' %}" class="btn btn-primary">Nova Categoria de Parametro</a>
 
 <table class="table table-striped mt-3">
     <thead>
@@ -19,13 +19,13 @@
                  <td>{{ item.pk }}</td>
                 <td>{{ item.descricao }}</td>
                 <td>
-                    <a href="{% url 'tipo_parametro_editar' item.pk %}" class="btn btn-sm btn-warning">Editar</a>
-                    <a href="{% url 'tipo_parametro_excluir' item.pk %}" class="btn btn-sm btn-danger">Excluir</a>
+                    <a href="{% url 'categoria_parametro_editar' item.pk %}" class="btn btn-sm btn-warning">Editar</a>
+                    <a href="{% url 'categoria_parametro_excluir' item.pk %}" class="btn btn-sm btn-danger">Excluir</a>
                 </td>
             </tr>
         {% empty %}
             <tr>
-                <td colspan="2">Nenhum tipo de parametro cadastrado.</td>
+                <td colspan="2">Nenhuma categoria de parametro cadastrada.</td>
             </tr>
         {% endfor %}
     </tbody>

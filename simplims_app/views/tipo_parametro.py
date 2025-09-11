@@ -1,5 +1,5 @@
 """
-Tudo o que é relativo às views de Parametro ficam aqui
+Tudo o que é relativo às views de Tipo de Parametro ficam aqui
 """
 
 from django.urls import reverse_lazy
@@ -21,7 +21,7 @@ class TipoParametroViewMixin:
 
 
 class TipoParametroListView(TipoParametroViewMixin, ListView):
-    # context_object_name = "parametro"
+    # context_object_name = "tipo_parametro"
     template_name = "simplims_app/tipo_parametro/lista.html"
 
 

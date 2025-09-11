@@ -71,12 +71,17 @@ class Empresa(models.Model):
     def __str__(self):
         return self.apelido
 
-class TipoParametro(models.Model):
+class CategoriaParametro(models.Model):
     descricao = models.CharField(max_length=100, unique=True)
 
     def __str__(self):
         return self.descricao
 
+class TipoParametro(models.Model):
+    descricao = models.CharField(max_length=100, unique=True)
+
+    def __str__(self):
+        return self.descricao
 
 class Parametro(models.Model):
     descricao = models.CharField(max_length=100, unique=True)
