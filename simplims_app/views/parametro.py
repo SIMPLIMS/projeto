@@ -31,11 +31,6 @@ class ParametroViewMixin:
             )
         return queryset
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context["q"] = self.request.GET.get("q", "")
-        return context
-
 
 class ParametroListView(ParametroViewMixin, ListView):
     # context_object_name = "parametro"
