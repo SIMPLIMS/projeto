@@ -4,7 +4,7 @@ Tudo o que é relativo às views de Parametro ficam aqui
 
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, DeleteView, ListView, UpdateView
-
+from django.db.models import Q
 from ..forms import ParametroForm
 from ..models import Parametro
 from .mixins import DeleteRecordMixin
@@ -18,6 +18,23 @@ class ParametroViewMixin:
     model = Parametro
     form_class = ParametroForm
     success_url = reverse_lazy("parametro_listar")
+
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        q = self.request.GET.get("q")
+        if q:
+            queryset = queryset.filter(
+                Q(descricao__icontains=q) |
+                Q(unidade_medida__icontains=q) |
+                Q(categoria_parametro__descricao__icontains=q) |
+                Q(tipo_parametro__descricao__icontains=q)
+            )
+        return queryset
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["q"] = self.request.GET.get("q", "")
+        return context
 
 
 class ParametroListView(ParametroViewMixin, ListView):
