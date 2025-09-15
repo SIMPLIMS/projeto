@@ -1,0 +1,30 @@
+from django.db import models
+
+class Parametro(models.Model):
+    descricao = models.CharField(max_length=100, unique=True)
+
+    unidade_medida = models.CharField(
+        help_text="Unidade de medida",
+        max_length=10,
+        verbose_name="Unidade",
+    )
+
+    tipo_parametro = models.ForeignKey(
+        "TipoParametro",
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+     )
+
+    categoria_parametro = models.ForeignKey(
+        "CategoriaParametro",
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+     )
+
+    def __str__(self):
+        return self.descricao
+
+    class Meta:
+        verbose_name = "Parametro"
