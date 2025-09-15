@@ -1,5 +1,6 @@
 <!-- templates/simplims_app/parametro/lista.html -->
-{% extends "base.html" %}
+{% extends "base.html" %}]
+{% load static %}
 {% block content %}
 
 <h1>Lista de Parâmetros</h1>
@@ -46,18 +47,12 @@
     </tbody>
 </table>
 
-<!-- Script para ativar o DataTable -->
-<script>
-  $(document).ready(function () {
-    $('#parametros-table').DataTable({
-      "language": {
-        "url": "//cdn.datatables.net/plug-ins/1.13.6/i18n/pt-BR.json"
-      },
-      "pageLength": 10
-    });
-  });
-</script>
+<!-- importar o JS do DataTables (CDN) -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
 
-
+<!-- importar o JS local -->
+<script src="{% static 'simplims_app/js/parametro_lista.js' %}"></script>
 
 {% endblock %}
