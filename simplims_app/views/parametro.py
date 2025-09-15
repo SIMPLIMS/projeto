@@ -23,11 +23,14 @@ class ParametroViewMixin:
 
 class ParametroListView(ParametroViewMixin, ListView):
     # context_object_name = "parametro"
+    model = Parametro
     template_name = "simplims_app/parametro/lista.html"
     paginate_by = 10
 
     def get_queryset(self):
         qs = super().get_queryset()
+
+        #filtro de busca
         q = self.request.GET.get("q", "").strip()
         if q:
             qs = qs.filter(
@@ -36,6 +39,13 @@ class ParametroListView(ParametroViewMixin, ListView):
                 Q(categoria_parametro__descricao__icontains=q) |
                 Q(tipo_parametro__descricao__icontains=q)
             )
+
+        #ordenação dinâmica
+        ordering = self.request.GET.get("ordering", "descricao")
+        allowed_orderings = ["id", "descricao", "unidade_medida", "categoria_parametro", "tipo_parametro"]
+        if ordering.lstrip("-") in allowed_orderings:
+            qs = qs.order_by(ordering)
+
         return qs
 
     def get_context_data(self, **kwargs):
