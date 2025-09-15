@@ -1,7 +1,7 @@
 from django.db import models
 
 class Parametro(models.Model):
-    descricao = models.CharField(max_length=100, unique=True)
+    descricao = models.CharField(max_length=100)
 
     unidade_medida = models.CharField(
         help_text="Unidade de medida",
@@ -28,3 +28,4 @@ class Parametro(models.Model):
 
     class Meta:
         verbose_name = "Parametro"
+        unique_together = ('descricao', 'unidade_medida')
