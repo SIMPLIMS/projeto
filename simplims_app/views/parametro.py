@@ -25,7 +25,7 @@ class ParametroListView(ParametroViewMixin, ListView):
     # context_object_name = "parametro"
     model = Parametro
     template_name = "simplims_app/parametro/lista.html"
-    paginate_by = 10
+
 
     def get_queryset(self):
         qs = super().get_queryset()
@@ -50,15 +50,6 @@ class ParametroListView(ParametroViewMixin, ListView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        page_obj = context["page_obj"]
-        paginator = page_obj.paginator
-
-        # Range de páginas (ex: mostra 2 antes e 2 depois da atual)
-        index = page_obj.number
-        start_index = max(index - 2, 1)
-        end_index = min(index + 2, paginator.num_pages) + 1
-        context["page_range"] = range(start_index, end_index)
-
         context["q"] = self.request.GET.get("q", "")
         return context
 
