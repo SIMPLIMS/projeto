@@ -102,7 +102,6 @@ class LegislacaoForm(forms.ModelForm):
         fields = [
             "parametro",
             "valor_maximo",
-            "valor_minimo",
             "observacao",
         ]
 
