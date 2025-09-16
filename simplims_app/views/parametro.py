@@ -41,7 +41,7 @@ class ParametroListView(ParametroViewMixin, ListView):
             )
 
         #ordenação dinâmica
-        ordering = self.request.GET.get("ordering", "descricao")
+        ordering = self.request.GET.get("ordering", "id")
         allowed_orderings = ["id", "descricao", "unidade_medida", "categoria_parametro", "tipo_parametro"]
         if ordering.lstrip("-") in allowed_orderings:
             qs = qs.order_by(ordering)
