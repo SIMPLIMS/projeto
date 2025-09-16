@@ -26,6 +26,13 @@ class EmpresaForm(forms.ModelForm):
         model = Empresa
         fields = [
             "apelido",
+            "razao_social",
+            "endereco",
+            "telefone",
+            "cnpj",
+            "tipo_empresa",
+            "email",
+            "responsavel_tecnico",
         ]
 
 class CategoriaParametroForm(forms.ModelForm):

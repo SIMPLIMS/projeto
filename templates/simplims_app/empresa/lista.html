@@ -11,14 +11,23 @@
         <tr>
             <th>Id</th>
             <th>Apelido</th>
-            <th>Ações</th>
+            <th>Responsável</th>
+            <th>Tipo Empresa</th>
+            <th>Telefone</th>
+            <th>E-mail</th>
+            <th>Razão Social</th>
         </tr>
     </thead>
     <tbody>
         {% for item in object_list %}
             <tr>
-                 <td>{{ item.pk }}</td>
+                <td>{{ item.pk }}</td>
                 <td>{{ item.apelido }}</td>
+                <td>{{ item.responsavel_tecnico }}</td>
+                <td>{{ item.get_tipo_empresa_display }}</td>
+                <td>{{ item.telefone }}</td>
+                <td>{{ item.email }}</td>
+                <td>{{ item.razao_social }}</td>
                 <td>
                     <a href="{% url 'empresa_editar' item.pk %}" class="btn btn-sm btn-warning">Editar</a>
                     <a href="{% url 'empresa_excluir' item.pk %}" class="btn btn-sm btn-danger">Excluir</a>
