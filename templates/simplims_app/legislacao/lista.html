@@ -12,6 +12,7 @@
             <th>Id</th>
             <th>Parâmetro</th>
             <th>Valor Máximo</th>
+            <th>Unidade de Medida</th>
             <th>Observação</th>
             <th>Ações</th>
         </tr>
@@ -22,6 +23,7 @@
                  <td>{{ item.pk }}</td>
                 <td>{{ item.parametro }}</td>
                 <td>{{ item.valor_maximo }}</td>
+                <td>{{ item.parametro.unidade_medida }}</td>
                 <td>{{ item.observacao }}</td>
                 <td>
                     <a href="{% url 'legislacao_editar' item.pk %}" class="btn btn-sm btn-warning">Editar</a>
