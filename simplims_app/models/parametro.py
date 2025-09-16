@@ -4,9 +4,9 @@ class Parametro(models.Model):
     descricao = models.CharField(max_length=100)
 
     unidade_medida = models.CharField(
-        help_text="Unidade de medida",
+        #help_text="Unidade de medida",
         max_length=10,
-        verbose_name="Unidade",
+        verbose_name="Unidade de Medida",
     )
 
     tipo_parametro = models.ForeignKey(
