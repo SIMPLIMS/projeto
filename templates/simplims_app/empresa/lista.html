@@ -1,4 +1,4 @@
-<!-- templates/simplims_app/empresa/lista.html -->
+'<!-- templates/simplims_app/empresa/lista.html -->
 {% extends "base.html" %}
 {% block content %}
 
@@ -10,9 +10,9 @@
     <thead>
         <tr>
             <th>Id</th>
+            <th>Tipo Empresa</th>
             <th>Apelido</th>
             <th>Responsável</th>
-            <th>Tipo Empresa</th>
             <th>Telefone</th>
             <th>E-mail</th>
             <th>Razão Social</th>
@@ -22,9 +22,9 @@
         {% for item in object_list %}
             <tr>
                 <td>{{ item.pk }}</td>
+                <td>{{ item.get_tipo_empresa_display }}</td>
                 <td>{{ item.apelido }}</td>
                 <td>{{ item.responsavel_tecnico }}</td>
-                <td>{{ item.get_tipo_empresa_display }}</td>
                 <td>{{ item.telefone }}</td>
                 <td>{{ item.email }}</td>
                 <td>{{ item.razao_social }}</td>
