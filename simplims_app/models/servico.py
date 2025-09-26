@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class Servico(models.Model):
     descricao = models.CharField(max_length=100, unique=True)
 
@@ -8,7 +9,7 @@ class Servico(models.Model):
         on_delete=models.CASCADE,
     )
 
-    def __str__(self):
+    def __str__(self) -> str:
         return self.descricao
 
     class Meta:
