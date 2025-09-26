@@ -5,22 +5,49 @@ from datetime import datetime, timedelta
 
 from django.shortcuts import render
 
-from .empresa import (EmpresaCreateView, EmpresaDeleteView, EmpresaListView,
-                      EmpresaUpdateView)
-from .legislacao import (LegislacaoCreateView, LegislacaoDeleteView,
-                         LegislacaoListView, LegislacaoUpdateView)
-from .matriz import (MatrizCreateView, MatrizDeleteView, MatrizListView,
-                     MatrizUpdateView)
-from .ordem_servico import (OrdemServicoCreateView, OrdemServicoDeleteView,
-                            OrdemServicoListView, OrdemServicoUpdateView)
-from .categoria_parametro import (CategoriaParametroCreateView, CategoriaParametroDeleteView,
-                        CategoriaParametroListView, CategoriaParametroUpdateView)
-from .tipo_parametro import (TipoParametroCreateView, TipoParametroDeleteView,
-                        TipoParametroListView, TipoParametroUpdateView)
-from .parametro import (ParametroCreateView, ParametroDeleteView,
-                        ParametroListView, ParametroUpdateView)
-from .servico import (ServicoCreateView, ServicoDeleteView, ServicoListView,
-                      ServicoUpdateView)
+from .empresa import (
+    EmpresaCreateView,
+    EmpresaDeleteView,
+    EmpresaListView,
+    EmpresaUpdateView,
+)
+from .legislacao import (
+    LegislacaoCreateView,
+    LegislacaoDeleteView,
+    LegislacaoListView,
+    LegislacaoUpdateView,
+)
+from .matriz import MatrizCreateView, MatrizDeleteView, MatrizListView, MatrizUpdateView
+from .ordem_servico import (
+    OrdemServicoCreateView,
+    OrdemServicoDeleteView,
+    OrdemServicoListView,
+    OrdemServicoUpdateView,
+)
+from .categoria_parametro import (
+    CategoriaParametroCreateView,
+    CategoriaParametroDeleteView,
+    CategoriaParametroListView,
+    CategoriaParametroUpdateView,
+)
+from .tipo_parametro import (
+    TipoParametroCreateView,
+    TipoParametroDeleteView,
+    TipoParametroListView,
+    TipoParametroUpdateView,
+)
+from .parametro import (
+    ParametroCreateView,
+    ParametroDeleteView,
+    ParametroListView,
+    ParametroUpdateView,
+)
+from .servico import (
+    ServicoCreateView,
+    ServicoDeleteView,
+    ServicoListView,
+    ServicoUpdateView,
+)
 
 locale.setlocale(locale.LC_TIME, "pt_BR.UTF-8")
 
