@@ -31,9 +31,15 @@ urlpatterns = [
         name="empresa_excluir",
     ),
     # URLs de TipoParametro
-    path("tipo_parametro/", views.TipoParametroListView.as_view(), name="tipo_parametro_listar"),
     path(
-        "tipo_parametro/novo/", views.TipoParametroCreateView.as_view(), name="tipo_parametro_criar"
+        "tipo_parametro/",
+        views.TipoParametroListView.as_view(),
+        name="tipo_parametro_listar",
+    ),
+    path(
+        "tipo_parametro/novo/",
+        views.TipoParametroCreateView.as_view(),
+        name="tipo_parametro_criar",
     ),
     path(
         "tipo_parametro/<int:pk>/editar/",
@@ -45,11 +51,16 @@ urlpatterns = [
         views.TipoParametroDeleteView.as_view(),
         name="tipo_parametro_excluir",
     ),
-
     # URLs de CategoriaParametro
-    path("categoria_parametro/", views.CategoriaParametroListView.as_view(), name="categoria_parametro_listar"),
     path(
-        "categoria_parametro/novo/", views.CategoriaParametroCreateView.as_view(), name="categoria_parametro_criar"
+        "categoria_parametro/",
+        views.CategoriaParametroListView.as_view(),
+        name="categoria_parametro_listar",
+    ),
+    path(
+        "categoria_parametro/novo/",
+        views.CategoriaParametroCreateView.as_view(),
+        name="categoria_parametro_criar",
     ),
     path(
         "categoria_parametro/<int:pk>/editar/",
@@ -61,7 +72,6 @@ urlpatterns = [
         views.CategoriaParametroDeleteView.as_view(),
         name="categoria_parametro_excluir",
     ),
-
     # URLs de Parametros
     path("parametro/", views.ParametroListView.as_view(), name="parametro_listar"),
     path(
@@ -111,7 +121,6 @@ urlpatterns = [
         views.OrdemServicoDeleteView.as_view(),
         name="ordem_servico_excluir",
     ),
-
     # URLs de Legislação
     path(
         "legislacao/",
