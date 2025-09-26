@@ -1,14 +1,15 @@
 from django import forms
 
-from .models import (Empresa,
-                     Matriz,
-                     OrdemServico,
-                     CategoriaParametro,
-                     TipoParametro,
-                     Parametro,
-                     Servico,
-                     Legislacao,
-                     )
+from .models import (
+    Empresa,
+    Matriz,
+    OrdemServico,
+    CategoriaParametro,
+    TipoParametro,
+    Parametro,
+    Servico,
+    Legislacao,
+)
 
 
 class MatrizForm(forms.ModelForm):
@@ -35,12 +36,14 @@ class EmpresaForm(forms.ModelForm):
             "responsavel_tecnico",
         ]
 
+
 class CategoriaParametroForm(forms.ModelForm):
     class Meta:
         model = CategoriaParametro
         fields = [
             "descricao",
         ]
+
 
 class TipoParametroForm(forms.ModelForm):
     class Meta:
@@ -49,17 +52,24 @@ class TipoParametroForm(forms.ModelForm):
             "descricao",
         ]
 
+
 class ParametroForm(forms.ModelForm):
 
     class Meta:
         model = Parametro
-        fields = ["descricao", "unidade_medida", "categoria_parametro", "tipo_parametro"]
+        fields = [
+            "descricao",
+            "unidade_medida",
+            "categoria_parametro",
+            "tipo_parametro",
+        ]
         labels = {
-        "descricao": "Descrição",
-        "unidade_medida": "Unidade de Medida",
-        "categoria_parametro": "Categoria",
-        "tipo_parametro": "Tipo",
+            "descricao": "Descrição",
+            "unidade_medida": "Unidade de Medida",
+            "categoria_parametro": "Categoria",
+            "tipo_parametro": "Tipo",
         }
+
 
 class ServicoForm(forms.ModelForm):
 

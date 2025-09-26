@@ -20,29 +20,33 @@ class ParametroViewMixin:
     success_url = reverse_lazy("parametro_listar")
 
 
-
 class ParametroListView(ParametroViewMixin, ListView):
     # context_object_name = "parametro"
     model = Parametro
     template_name = "simplims_app/parametro/lista.html"
 
-
     def get_queryset(self):
         qs = super().get_queryset()
 
-        #filtro de busca
+        # filtro de busca
         q = self.request.GET.get("q", "").strip()
         if q:
             qs = qs.filter(
-                Q(descricao__icontains=q) |
-                Q(unidade_medida__icontains=q) |
-                Q(categoria_parametro__descricao__icontains=q) |
-                Q(tipo_parametro__descricao__icontains=q)
+                Q(descricao__icontains=q)
+                | Q(unidade_medida__icontains=q)
+                | Q(categoria_parametro__descricao__icontains=q)
+                | Q(tipo_parametro__descricao__icontains=q)
             )
 
-        #ordenação dinâmica
+        # ordenação dinâmica
         ordering = self.request.GET.get("ordering", "id")
-        allowed_orderings = ["id", "descricao", "unidade_medida", "categoria_parametro", "tipo_parametro"]
+        allowed_orderings = [
+            "id",
+            "descricao",
+            "unidade_medida",
+            "categoria_parametro",
+            "tipo_parametro",
+        ]
         if ordering.lstrip("-") in allowed_orderings:
             qs = qs.order_by(ordering)
 

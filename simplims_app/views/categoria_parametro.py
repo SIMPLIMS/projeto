@@ -33,5 +33,7 @@ class CategoriaParametroUpdateView(CategoriaParametroViewMixin, UpdateView):
     template_name = "simplims_app/categoria_parametro/formulario.html"
 
 
-class CategoriaParametroDeleteView(CategoriaParametroViewMixin, DeleteRecordMixin, DeleteView):
+class CategoriaParametroDeleteView(
+    CategoriaParametroViewMixin, DeleteRecordMixin, DeleteView
+):
     template_name = "simplims_app/categoria_parametro/confirmar_exclusao.html"
