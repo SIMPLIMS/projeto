@@ -6,3 +6,4 @@ from .parametro import *
 from .servico import *
 from .ordem_servico import *
 from .legislacao import *
+from .visita_tecnica import *
