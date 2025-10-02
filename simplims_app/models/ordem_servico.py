@@ -25,7 +25,7 @@ class OrdemServico(models.Model):
     )
 
     def __str__(self) -> str:
-        return f"OS {self.numero} - {self.empresa.nome}"
+        return f"OS {self.id} - {self.empresa}"
 
     class Meta:
         verbose_name = "Ordem de Serviço"
