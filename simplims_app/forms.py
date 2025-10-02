@@ -125,3 +125,27 @@ class LegislacaoForm(forms.ModelForm):
         widgets = {
             "parametro": forms.Select(attrs={"class": "form-control"}),
         }
+
+
+from django import forms
+from .models import VisitaTecnica
+
+
+class VisitaTecnicaForm(forms.ModelForm):
+    class Meta:
+        model = VisitaTecnica
+        fields = [
+            "ordem_servico",
+            "data_visita",
+            "hora_visita",
+            "local",
+            "responsavel",
+            "observacoes",
+            "status",
+        ]
+        widgets = {
+            "data_visita": forms.DateInput(attrs={"type": "date"}),
+            "hora_visita": forms.TimeInput(attrs={"type": "time"}),
+            "observacoes": forms.Textarea(attrs={"rows": 3}),
+            "status": forms.Select(),
+        }

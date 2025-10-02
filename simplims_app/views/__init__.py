@@ -49,6 +49,14 @@ from .servico import (
     ServicoUpdateView,
 )
 
+from .visita_tecnica import (
+    VisitaTecnicaCreateView,
+    VisitaTecnicaDeleteView,
+    VisitaTecnicaListView,
+    VisitaTecnicaUpdateView,
+)
+
+
 locale.setlocale(locale.LC_TIME, "pt_BR.UTF-8")
 
 

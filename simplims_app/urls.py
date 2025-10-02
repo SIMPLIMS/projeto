@@ -142,4 +142,26 @@ urlpatterns = [
         views.LegislacaoDeleteView.as_view(),
         name="legislacao_excluir",
     ),
+
+# URLs de VisitaTecnica
+    path(
+        "visita_tecnica/",
+        views.VisitaTecnicaListView.as_view(),
+        name="visita_tecnica_listar",
+    ),
+    path(
+        "visita_tecnica/novo/",
+        views.VisitaTecnicaCreateView.as_view(),
+        name="visita_tecnica_criar",
+    ),
+    path(
+        "visita_tecnica/<int:pk>/editar/",
+        views.VisitaTecnicaUpdateView.as_view(),
+        name="visita_tecnica_editar",
+    ),
+    path(
+        "visita_tecnica/<int:pk>/excluir/",
+        views.VisitaTecnicaDeleteView.as_view(),
+        name="visita_tecnica_excluir",
+    ),
 ]
