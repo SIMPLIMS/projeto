@@ -164,4 +164,9 @@ urlpatterns = [
         views.VisitaTecnicaDeleteView.as_view(),
         name="visita_tecnica_excluir",
     ),
+
+    # Agenda
+    path("visita_tecnica/agenda/", AgendaDiaView.as_view(), name="visita_tecnica_agenda"),
+    path("visita_tecnica/agenda/<int:ano>/<int:mes>/<int:dia>/", AgendaDiaView.as_view(), name="visita_tecnica_agenda_dia"),
 ]
+

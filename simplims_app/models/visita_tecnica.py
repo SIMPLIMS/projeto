@@ -36,7 +36,7 @@ class VisitaTecnica(models.Model):
         max_length=20,
         choices=STATUS_CHOICES,
         default="PENDENTE",
-        verbose_name="Status do Agendamento"
+        verbose_name="Status"
     )
 
     criado_em = models.DateTimeField(auto_now_add=True)

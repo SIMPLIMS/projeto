@@ -54,6 +54,7 @@ from .visita_tecnica import (
     VisitaTecnicaDeleteView,
     VisitaTecnicaListView,
     VisitaTecnicaUpdateView,
+    AgendaDiaView,
 )
 
 
