@@ -9,6 +9,7 @@ from .models import (
     Parametro,
     Servico,
     Legislacao,
+    VisitaTecnica,
 )
 
 
@@ -125,10 +126,6 @@ class LegislacaoForm(forms.ModelForm):
         widgets = {
             "parametro": forms.Select(attrs={"class": "form-control"}),
         }
-
-
-from django import forms
-from .models import VisitaTecnica
 
 
 class VisitaTecnicaForm(forms.ModelForm):
