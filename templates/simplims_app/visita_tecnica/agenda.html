@@ -1,7 +1,19 @@
 {% extends "base.html" %}
 {% block content %}
-    <h1 class="mb-4">Agenda de Visitas Técnicas</h1>
+<div class="container mt-4">
+    <h1 class="mb-4">Visitas Técnicas</h1>
 
+    <!-- Abas de navegação -->
+    <ul class="nav nav-tabs mb-4">
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'visita_tecnica_listar' %}">Listar</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" href="{% url 'visita_tecnica_agenda' %}">Agenda</a>
+        </li>
+    </ul>
+
+    <!-- Cabeçalho da Agenda -->
     <div class="card shadow-sm mb-4">
         <div class="card-body text-center">
             <h5>{{ data|date:"l" }}</h5> <!-- Nome do dia da semana -->
@@ -19,6 +31,7 @@
         </div>
     </div>
 
+    <!-- Tabela de visitas -->
     {% if visitas %}
         <table class="table table-striped">
             <thead>
@@ -38,10 +51,8 @@
                         <td>{{ item.responsavel }}</td>
                         <td>{{ item.get_status_display }}</td>
                         <td>
-                            <a href="{% url 'visita_tecnica_editar' item.pk %}"
-                               class="btn btn-sm btn-warning">Editar</a>
-                            <a href="{% url 'visita_tecnica_excluir' item.pk %}"
-                               class="btn btn-sm btn-danger">Excluir</a>
+                            <a href="{% url 'visita_tecnica_editar' item.pk %}" class="btn btn-sm btn-warning">Editar</a>
+                            <a href="{% url 'visita_tecnica_excluir' item.pk %}" class="btn btn-sm btn-danger">Excluir</a>
                         </td>
                     </tr>
                 {% endfor %}
@@ -52,4 +63,5 @@
             Nenhuma visita técnica cadastrada para este dia.
         </div>
     {% endif %}
+</div>
 {% endblock %}
