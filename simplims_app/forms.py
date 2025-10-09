@@ -131,6 +131,7 @@ class LegislacaoForm(forms.ModelForm):
 class VisitaTecnicaForm(forms.ModelForm):
     class Meta:
         model = VisitaTecnica
+        fields = "__all__"
         fields = [
             "ordem_servico",
             "data_visita",

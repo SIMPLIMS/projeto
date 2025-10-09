@@ -1,7 +1,11 @@
 {% extends "simplims_app/visita_tecnica/base_tabs.html" %}
 {% block tab_content %}
-<h2>Lista de Visitas Técnicas</h2>
-<a href="{% url 'visita_tecnica_criar' %}" class="btn btn-primary mb-3">Nova Visita</a>
+<h2>Lista de Visitas Técnicas
+<a type="button"
+           class="btn btn-primary"
+           href="{% url 'visita_tecnica_criar' %}"
+           class="btn btn-primary">Incluir</a>
+</h2>
 <table class="table table-striped">
     <thead>
         <tr>
