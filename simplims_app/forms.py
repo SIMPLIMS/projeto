@@ -95,7 +95,7 @@ class OrdemServicoForm(forms.ModelForm):
         model = OrdemServico
         fields = [
             "empresa",
-            "servico",
+            # "servico",
             "matriz",
             "quantidade_amostras",
             "observacoes",
