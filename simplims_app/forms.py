@@ -91,20 +91,26 @@ class ServicoForm(forms.ModelForm):
 
 class OrdemServicoForm(forms.ModelForm):
 
+    servicos = forms.ModelMultipleChoiceField(
+        label="Serviços",
+        help_text=
+            "Selecione um ou mais serviços"
+        ,
+        queryset=Servico.objects.all(),
+        required=True,
+    )
+
     class Meta:
         model = OrdemServico
         fields = [
             "empresa",
-            # "servico",
-            "matriz",
+            "servicos",
             "quantidade_amostras",
             "observacoes",
         ]
 
         widgets = {
             "empresa": forms.Select(attrs={"class": "form-control"}),
-            "servico": forms.Select(attrs={"class": "form-control"}),
-            "matriz": forms.Select(attrs={"class": "form-control"}),
             "quantidade_amostras": forms.NumberInput(
                 attrs={"class": "form-control", "min": 1}
             ),

@@ -12,7 +12,7 @@ class Servico(models.Model):
     )
 
     def __str__(self) -> str:
-        return self.descricao
+        return f"{self.descricao} | {self.matriz}"
 
     class Meta:
         verbose_name = "Serviço"
