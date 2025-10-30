@@ -7,12 +7,10 @@
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Data de Emissão</th>
                 <th>Empresa</th>
-                <th>Serviço</th>
-                <th>Matriz</th>
-                <th>Qtd. Amostras</th>
+                <th>Serviços</th>
                 <th>Observações</th>
+                <th>Data de Emissão</th>
                 <th>Ações</th>
             </tr>
         </thead>
@@ -20,12 +18,12 @@
             {% for item in object_list %}
                 <tr>
                     <td>{{ item.pk }}</td>
-                    <td>{{ item.data_emissao|date:"d/m/Y" }}</td>
                     <td>{{ item.empresa }}</td>
-                    <td>{{ item.servico }}</td>
-                    <td>{{ item.matriz }}</td>
-                    <td>{{ item.quantidade_amostras }}</td>
-                    <td>{{ item.observacoes|default:"-" }}</td>
+                    <td>
+                        {% for servico in item.servicos.all %}<span class="badge text-bg-secondary">{{ servico.descricao }}</span>{% endfor %}
+                    </td>
+                    <td>{{ item.observacoes|default:"- - -" }}</td>
+                    <td>{{ item.data_emissao|date:"d/m/Y" }}</td>
                     <td>
                         <a href="{% url 'ordem_servico_editar' item.pk %}"
                            class="btn btn-sm btn-warning">Editar</a>
