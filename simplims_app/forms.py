@@ -106,15 +106,11 @@ class OrdemServicoForm(forms.ModelForm):
         fields = [
             "empresa",
             "servicos",
-            "quantidade_amostras",
             "observacoes",
         ]
 
         widgets = {
             "empresa": forms.Select(attrs={"class": "form-control"}),
-            "quantidade_amostras": forms.NumberInput(
-                attrs={"class": "form-control", "min": 1}
-            ),
             "observacoes": forms.Textarea(attrs={"class": "form-control", "rows": 3}),
         }
 

@@ -10,9 +10,6 @@ class OrdemServico(models.Model):
     empresa = models.ForeignKey(
         Empresa, on_delete=models.CASCADE, verbose_name="Empresa Cliente"
     )
-    quantidade_amostras = models.PositiveIntegerField(
-        verbose_name="Quantidade de Amostras"
-    )
     observacoes = models.TextField(blank=True, null=True, verbose_name="Observações")
     servicos = models.ManyToManyField(
         Servico,
@@ -20,6 +17,7 @@ class OrdemServico(models.Model):
         help_text="Selecione os serviços desta OS",
         verbose_name="Serviços contratados",
     )
+    resultados_servicos = models.JSONField(null=True, blank=True)
 
     def __str__(self) -> str:
         return f"OS {self.id} - {self.empresa}"

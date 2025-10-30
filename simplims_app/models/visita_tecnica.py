@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class VisitaTecnica(models.Model):
     STATUS_CHOICES = [
         ("PENDENTE", "Pendente"),
@@ -19,24 +20,15 @@ class VisitaTecnica(models.Model):
     local = models.CharField(
         max_length=255,
         verbose_name="Local da Visita",
-        help_text="Endereço ou ponto de coleta"
+        help_text="Endereço ou ponto de coleta",
     )
 
-    responsavel = models.CharField(
-        max_length=100
-    )
+    responsavel = models.CharField(max_length=100)
 
-    observacoes = models.TextField(
-        null=True,
-        blank=True,
-        verbose_name="Observações"
-    )
+    observacoes = models.TextField(null=True, blank=True, verbose_name="Observações")
 
     status = models.CharField(
-        max_length=20,
-        choices=STATUS_CHOICES,
-        default="PENDENTE",
-        verbose_name="Status"
+        max_length=20, choices=STATUS_CHOICES, default="PENDENTE", verbose_name="Status"
     )
 
     criado_em = models.DateTimeField(auto_now_add=True)
